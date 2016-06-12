@@ -7,6 +7,13 @@ import org.bukkit.util.Vector;
 
 import java.util.*;
 
+/**
+ * Cuboid class for rectangular area selection.(usually for plots, not as territory)
+ * 
+ * @author	CptTr0ller <cpttr0ller@national.shitposting.agency>
+ * @version	ALPHA
+ * @since	ALPHA
+ */
 public class Cuboid implements Cloneable, ConfigurationSerializable, Iterable<Block> {
 	protected String worldName;
 	protected final Vector minimumPoint, maximumPoint;

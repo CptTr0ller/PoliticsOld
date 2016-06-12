@@ -8,6 +8,13 @@ import org.bukkit.event.world.ChunkLoadEvent;
 
 import com.cpttr0ller.spigotplugins.politics.datatypes.Territory;
 
+/**
+ * Handle the events called by the server for use of the plug-in.
+ * 
+ * @author	CptTr0ller <cpttr0ller@national.shitposting.agency>
+ * @version	ALPHA
+ * @since	ALPHA
+ */
 public final class Events implements Listener {
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void enteringRegion(PlayerMoveEvent event) {

@@ -2,6 +2,13 @@ package com.cpttr0ller.spigotplugins.politics;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
+/**
+ * Loads the settings so the plug-in will not fetch from files and cause some delays.
+ * 
+ * @author	CptTr0ller <cpttr0ller@national.shitposting.agency>
+ * @version	ALPHA
+ * @since	ALPHA
+ */
 public class Settings {
 	private Main plugin;
 	private FileConfiguration config;

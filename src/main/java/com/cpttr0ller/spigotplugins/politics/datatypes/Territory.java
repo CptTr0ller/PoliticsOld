@@ -5,6 +5,13 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.util.Vector;
 
+/**
+ * Class for managing territories.(chunks owned by a state)
+ * 
+ * @author	CptTr0ller <cpttr0ller@national.shitposting.agency>
+ * @version	ALPHA
+ * @since	ALPHA
+ */
 public class Territory {
 	private World world;
 	private Chunk chunk;
