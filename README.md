@@ -2,4 +2,4 @@
 Adds politics, territories, society, and war in Minecraft servers running Bukkit or its forks.
 
 **How to clone**
->This project is made using Eclipse, you can clone it to your Eclipse workspace with EGit.
+>This project is made using Eclipse, you can clone it to your Eclipse workspace with EGit. The building environment is Windows 10 or Ubuntu 16.04 with Java 1.8 using Eclipse Mars
