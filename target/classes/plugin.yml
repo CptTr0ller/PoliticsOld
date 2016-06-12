@@ -1,0 +1,5 @@
+name: Politics
+version: ALPHA
+author: CptTr0ller
+description: Adds politics, territories, society in the game.
+main: com.cpttr0ller.spigotplugins.politics.Main

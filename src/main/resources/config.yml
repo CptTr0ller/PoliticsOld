@@ -1,0 +1,10 @@
+general:
+  localization: en
+database:
+  dbtype: 1
+  filename: politics.db
+  host: hostname
+  port: 3306
+  name: database
+  username: username
+  password: password
