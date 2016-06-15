@@ -3,6 +3,7 @@ package com.cpttr0ller.spigotplugins.utilities;
 import java.io.IOException;
 
 import org.mcstats.Metrics;
+import org.mcstats.Metrics.Graph;
 
 import com.cpttr0ller.spigotplugins.PluginUtilities;
 
@@ -15,22 +16,21 @@ import com.cpttr0ller.spigotplugins.PluginUtilities;
  */
 public final class PluginMetrics {
 	private Metrics metrics;
-	private short metricsStatus;
+	private Graph[] graphs;
 	
-	public PluginMetrics() {
-		try {
-			metrics = new Metrics(PluginUtilities.getPlugin());
-			metrics.start();
-		} catch (IOException e) {
-			metricsStatus = 1;
+	public PluginMetrics(String... graphNames) throws IOException {
+		metrics = new Metrics(PluginUtilities.getPlugin());
+		metrics.start();
+		graphs = new Graph[graphNames.length];
+		for (int i = 0; i<=graphNames.length; i++) {
+			graphs[i] = metrics.createGraph(graphNames[i]);
 		}
 	}
 	
-	public void close() {
-		try {
-			metrics.disable();
-		} catch (IOException e) {
-			metricsStatus = 1;
+	public void close() throws IOException {
+		metrics.disable();
+		for (int i = 0; i<=graphs.length; i++) {
+			graphs[i] = null;
 		}
 	}
 	
@@ -38,7 +38,12 @@ public final class PluginMetrics {
 		return metrics;
 	}
 	
-	public short getMetricsStatus() {
-		return metricsStatus;
+	public void plot(int graphNumber, String valueName, int value) {
+		graphs[graphNumber].addPlotter(new Metrics.Plotter(valueName) {
+			@Override
+			public int getValue() {
+				return value;
+			}
+		});
 	}
 }
