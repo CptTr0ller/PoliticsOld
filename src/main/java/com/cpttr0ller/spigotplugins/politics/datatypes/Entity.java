@@ -9,8 +9,13 @@ package com.cpttr0ller.spigotplugins.politics.datatypes;
  */
 public abstract class Entity {
 	protected String name;
+	protected boolean active;
 	
 	public String getName() {
 		return name;
+	}
+	
+	public boolean isActive() {
+		return active;
 	}
 }

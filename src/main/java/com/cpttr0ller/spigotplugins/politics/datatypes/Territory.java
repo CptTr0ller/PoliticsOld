@@ -12,7 +12,7 @@ import org.bukkit.util.Vector;
  * @version	ALPHA
  * @since	ALPHA
  */
-public class Territory {
+public class Territory extends Entity {
 	private World world;
 	private Chunk chunk;
 	private int x;
@@ -22,6 +22,7 @@ public class Territory {
 	
 	public Territory(Chunk chunk) {
 		this.chunk = chunk;
+		this.active = chunk.isLoaded();
 		world = chunk.getWorld();
 		x = chunk.getX();
 		z = chunk.getZ();
