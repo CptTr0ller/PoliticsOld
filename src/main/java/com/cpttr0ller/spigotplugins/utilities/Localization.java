@@ -66,15 +66,7 @@ public class Localization {
 		localeFileName = "translations_" + locale;
 	}
 	
-	public static String localize(String message, String[] args) {
-		return prop.getProperty(message);
-	}
-	
-	private String formatMessage(String message, String[] value) {
-		String result = prop.getProperty(message);
-		for (int i=0; i<value.length; i++) {
-			// Yes this is an error, i can't find a good replacement for replaceAll method, it is supposed to replace the value of the localization placeholder from a file.
-			result = result.replaceAll("[" + i + "]", value);
-		}
+	public static String formatMessage(String message, Object... value) {
+		return String.format(prop.getProperty(message), value);
 	}
 }
